@@ -1,0 +1,89 @@
+-- https://dbdiagram.io
+
+Table artist {
+  id int [pk, increment]
+  first_name varchar(100)
+  last_name varchar(100)
+  stage_name varchar(100) [not null]
+  country_code varchar(50)
+  dob timestamp
+  end timestamp
+  record_label_id int
+}
+
+Table role_information {
+  role_id int [pk, ref: > role.id]
+  artist_id int [pk, ref: > artist.id]
+  start timestamp
+  end timestamp
+}
+
+Table role {
+  id int [pk]
+  role varchar(100)
+  description varchar(256)
+}
+
+Table country {
+  country_code int [pk, increment, ref: < record_label.country_code, ref: < artist.country_code]
+  name varchar(50)
+  continent_name varchar(100)
+}
+
+Table record_label_artists {
+  artist_id int [pk, ref: > artist.id]
+  record_label_id int [pk, ref: > record_label.id]  
+}
+
+Table record_label {
+  id int [pk, increment]
+  name varchar(100) [not null]
+  date_founded timestamp
+  country_code varchar(50)
+  city varchar(50)
+  state varchar(50)
+  logo varchar(100)
+  website varchar(100)
+}
+
+Table track_artists {
+  track_id int [pk, ref: > artist.id]
+  song_id int [pk, ref: > track.id]
+}
+
+Table track {
+  id int [pk, increment]
+  name varchar(100) [not null]
+  length_seconds int
+  album varchar(100)
+  release_date timestamp
+  people_id int
+}
+
+Table album_artists {
+  artist_id int [ref: > artist.id]
+  album_id int [ref: > album.id]
+}
+
+Table album_tracks {
+  album_id int [pk, ref: > album.id]
+  track_id int [pk, ref: > track.id]
+}
+
+Table album {
+  id int [pk, increment]
+  name varchar(100) [not null]
+  release_date timestamp
+  length int
+}
+
+Table playlist_tracks {
+  track_id int [pk, ref: < track.id]
+  playlist_id int [pk, ref: < playlist.id]
+}
+
+Table playlist {
+  id int [pk, increment]
+  name varchar(100) [not null, unique]
+  song_id int
+}
