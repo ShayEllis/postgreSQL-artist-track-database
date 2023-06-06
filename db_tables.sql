@@ -5,7 +5,7 @@ continent_name varchar(100)
 );
 
 CREATE TABLE record_label (
-id int PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 name varchar(50),
 date_founded timestamp,
 country_code int REFERENCES country(country_code),
@@ -17,7 +17,7 @@ website_url varchar(254)
 );
 
 CREATE TABLE artist (
-id int PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 first_name varchar(50),
 last_name varchar(50),
 stage_name varchar(50),
@@ -34,14 +34,14 @@ PRIMARY KEY(artist_id, record_label_id)
 );
 
 CREATE TABLE album (
-id int PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 name varchar(50),
 release_date timestamp,
 length_seconds int
 );
 
 CREATE TABLE track (
-id int PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 name varchar(50),
 length_seconds int,
 release_date timestamp,
@@ -66,7 +66,7 @@ track_id int REFERENCES track(id)
 );
 
 CREATE TABLE playlist (
-id int PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 name varchar(100),
 song_id int
 );
@@ -78,7 +78,7 @@ PRIMARY KEY(track_id, playlist_id)
 );
 
 CREATE TABLE role (
-id int PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 role varchar(50),
 description varchar(254)
 );
