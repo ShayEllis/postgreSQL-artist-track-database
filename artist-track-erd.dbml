@@ -8,15 +8,15 @@ Table artist {
   stage_name varchar(100) [not null]
   country_code varchar(50)
   dob timestamp
-  end timestamp
-  record_label_id int
+  career_start timestamp
+  career_end timestamp
 }
 
 Table role_information {
   role_id int [pk, ref: > role.id]
   artist_id int [pk, ref: > artist.id]
-  start timestamp
-  end timestamp
+  role_start timestamp
+  role_end timestamp
 }
 
 Table role {
@@ -43,8 +43,9 @@ Table record_label {
   country_code varchar(50)
   city varchar(50)
   state varchar(50)
-  logo varchar(100)
-  website varchar(100)
+  zip_code int
+  logo_url varchar(100)
+  website_url varchar(100)
 }
 
 Table track_artists {
@@ -56,7 +57,6 @@ Table track {
   id int [pk, increment]
   name varchar(100) [not null]
   length_seconds int
-  album varchar(100)
   release_date timestamp
   people_id int
 }
@@ -75,7 +75,7 @@ Table album {
   id int [pk, increment]
   name varchar(100) [not null]
   release_date timestamp
-  length int
+  length_seconds int
 }
 
 Table playlist_tracks {
