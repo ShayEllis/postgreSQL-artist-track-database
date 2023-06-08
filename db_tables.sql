@@ -44,8 +44,7 @@ CREATE TABLE track (
 id SERIAL PRIMARY KEY,
 name varchar(50),
 length_seconds int,
-release_date timestamp,
-people_id int
+release_date timestamp
 );
 
 CREATE TABLE track_artists (
@@ -67,8 +66,7 @@ track_id int REFERENCES track(id)
 
 CREATE TABLE playlist (
 id SERIAL PRIMARY KEY,
-name varchar(100),
-song_id int
+name varchar(100)
 );
 
 CREATE TABLE playlist_tracks (
