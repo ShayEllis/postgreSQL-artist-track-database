@@ -46,3 +46,74 @@ VALUES
 	(1, 'founder', 'founder or co-founder of the record label'),
 	(2, 'musician', 'singer/instrument player'),
 	(3, 'audio engineer', 'produce recordings & live performances');
+
+INSERT INTO track
+VALUES 
+	(1, 'track 1', 222, make_date(2020, 1, 10)),
+	(2, 'track 2', 333, make_date(2021, 2,20)),
+	(3, 'track 3', 444, make_date(2019, 2, 2)),
+	(4, 'track 4', 432, make_date(2017, 3, 1));
+	
+INSERT INTO playlist
+VALUES
+	(1, 'playlist 1'),
+	(2, 'playlist 2');
+	
+INSERT INTO role_information
+VALUES
+	(1, 1, make_date(1999, 1, 1), NULL),
+	(2, 1, make_date(1992, 1, 1), NULL),
+	(2, 2, make_date(2001, 1, 1), NULL),
+	(2, 3, make_date(2013, 1, 1), NULL),
+	(2, 4, make_date(1972, 1, 1), NULL);
+	
+	
+INSERT INTO track_artists
+VALUES
+	(1, 1),
+	(1, 2),
+	(1, 3),
+	(2, 1),
+	(2, 2),
+	(3, 3),
+	(4, 4);
+	
+INSERT INTO album_artists
+VALUES
+	(1, 1),
+	(1, 2),
+	(1, 3),
+	(2, 1),
+	(2, 3),
+	(3, 1),
+	(4, 1),
+	(5, 1),
+	(6, 1),
+	(7, 2),
+	(7, 4),
+	(8, 1);
+	
+INSERT INTO album_tracks
+VALUES
+	(1, 1),
+	(1, 2),
+	(1, 3),
+	(2, 3),
+	(3, 3),
+	(3, 2),
+	(3, 3),
+	(3, 4),
+	(4, 4),
+	(5, 4),
+	(6, 1),
+	(7, 1),
+	(8, 2);
+	
+INSERT INTO playlist_tracks
+VALUES
+	(1, 1),
+	(2, 1),
+	(3, 1),
+	(4, 1),
+	(1, 2),
+	(4, 2);
