@@ -28,3 +28,21 @@ VALUES
 	(6, 'Morgan Wallen Album 2', make_date(2022, 3, 12), 6749),
 	(7, 'Coolio Album 1', make_date(2001, 3, 23), 4544),
 	(8, 'Coolio Album 2', make_date(1996, 6, 30), 5897);
+
+INSERT INTO record_label_artists
+VALUES
+	(1, 1),
+	(1, 2),
+	(1, 3),	
+	(2, 1),
+	(2, 2),
+	(2, 3),
+	(3, 1),
+	(3, 2),
+	(3, 3);
+	
+INSERT INTO role
+VALUES
+	(1, 'founder', 'founder or co-founder of the record label'),
+	(2, 'musician', 'singer/instrument player'),
+	(3, 'audio engineer', 'produce recordings & live performances');
